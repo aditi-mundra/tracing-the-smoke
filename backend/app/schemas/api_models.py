@@ -97,3 +97,25 @@ class FireReductionResponse(BaseModel):
     baseline_pm25: float
     scenarios: List[FireReductionScenario]
     scientific_disclaimer: str
+
+class FireTransportCluster(BaseModel):
+    rank: int
+    state: str
+    n_fires: int
+    frp_total_mw: float
+    centroid_lat: float
+    centroid_lon: float
+    distance_km: float
+    wind_free_score: float
+    wind_aware_score: Optional[float] = None
+    wind_coverage: Optional[float] = None
+    score_share_pct: float
+    ranking_basis: str
+
+class FireTransportRiskResponse(BaseModel):
+    target_date: str
+    lookback_days: int
+    ranking_basis: str
+    wind_source: str
+    clusters: List[FireTransportCluster]
+    notes: List[str]

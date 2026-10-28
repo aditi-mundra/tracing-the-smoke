@@ -20,13 +20,70 @@ from backend.app.schemas.api_models import (
     CounterfactualSimulationRequest,
     CounterfactualSimulationResponse,
     FireReductionRequest,
-    FireReductionResponse
+    FireReductionResponse,
+    FireTransportRiskResponse
 )
 from backend.app.services.data_service import data_service
 from backend.app.services.live_service import live_service
+from src.geospatial.fire_transport_risk import DEFAULT_LOOKBACK_DAYS, rank_fire_clusters
 
 logger = logging.getLogger("api_endpoints")
 router = APIRouter()
+
+@router.get("/fires/transport-risk", response_model=FireTransportRiskResponse)
+def get_fire_transport_risk(
+    date: str = Query(..., description="Target date in YYYY-MM-DD format"),
+    lookback_days: int = Query(DEFAULT_LOOKBACK_DAYS, ge=0, description="Include fires from this many days before the target date")
+):
+    """Return a relative ranking of Punjab-Haryana fire clusters by transport relevance to Delhi."""
+    from datetime import datetime
+
+    try:
+        target_date = datetime.strptime(date, "%Y-%m-%d").date()
+        if target_date.isoformat() != date:
+            raise ValueError
+    except ValueError:
+        raise HTTPException(status_code=400, detail="date must be a valid calendar date in YYYY-MM-DD format")
+
+    hotspots_path = settings.DATA_METADATA_DIR / "sample_fire_hotspots.json"
+    if not hotspots_path.is_file():
+        raise HTTPException(status_code=503, detail=f"Fire hotspot data file is unavailable: {hotspots_path}")
+    if not isinstance(data_service.fire_hotspots, list):
+        raise HTTPException(status_code=503, detail="Fire hotspot data is unavailable or malformed.")
+    if not data_service.fire_hotspots:
+        raise HTTPException(status_code=404, detail="No valid fire hotspots are available for the requested date window.")
+
+    fires = pd.DataFrame(data_service.fire_hotspots)
+    if not (
+        {"date", "acq_date"} & set(fires.columns)
+        and {"state", "region"} & set(fires.columns)
+        and {"latitude", "longitude", "frp"}.issubset(fires.columns)
+    ):
+        raise HTTPException(status_code=503, detail="Fire hotspot data is missing required fields.")
+    ranked, notes = rank_fire_clusters(
+        fires,
+        wind=None,
+        target_date=target_date,
+        lookback_days=lookback_days,
+    )
+    if ranked.empty:
+        raise HTTPException(status_code=404, detail="No valid fire hotspots found in the requested date window.")
+
+    clusters = []
+    for cluster in ranked.to_dict(orient="records"):
+        clusters.append({
+            key: None if pd.isna(value) else value
+            for key, value in cluster.items()
+        })
+
+    return {
+        "target_date": target_date.isoformat(),
+        "lookback_days": lookback_days,
+        "ranking_basis": "wind_free",
+        "wind_source": "none; no suitable observed daily wind source is available",
+        "clusters": clusters,
+        "notes": notes,
+    }
 
 @router.get("/health", response_model=HealthResponse)
 def get_health():
