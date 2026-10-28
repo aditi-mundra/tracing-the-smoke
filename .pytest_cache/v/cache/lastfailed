@@ -27,5 +27,6 @@
   "tests/test_phase1_final_fixes.py::test_04_firms_ist_date_consistency": true,
   "tests/test_phase1_final_fixes.py::test_05_confirmed_zero_fires_vs_gap": true,
   "tests/test_phase1_final_fixes.py::test_06_multisource_eligibility_tiers": true,
-  "tests/test_phase1_final_fixes.py::test_07_severe_episodes_in_multisource": true
+  "tests/test_phase1_final_fixes.py::test_07_severe_episodes_in_multisource": true,
+  "tests/test_fire_transport_api.py::TestClient": true
 }

@@ -175,4 +175,27 @@ export async function fetchSpatialStations(date?: string) {
   return res.json();
 }
 
+export async function fetchFireTransportRisk(params: { date: string; lookback_days?: number }) {
+  const q = new URLSearchParams();
+  q.append("date", params.date);
+  if (params.lookback_days !== undefined) q.append("lookback_days", String(params.lookback_days));
+  const res = await apiFetch(`/fires/transport-risk?${q.toString()}`);
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({ detail: res.statusText }));
+    throw new Error(err.detail || "Failed to fetch fire transport risk");
+  }
+  return res.json();
+}
 
+export async function fetchFireReductionScenarios(payload: { date: string; model_name?: string }) {
+  const res = await apiFetch("/simulate/fire-reduction", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload)
+  });
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({ detail: res.statusText }));
+    throw new Error(err.detail || "Fire reduction simulation failed");
+  }
+  return res.json();
+}

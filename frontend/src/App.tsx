@@ -19,7 +19,8 @@ import {
   Radio,
   Sliders,
   MapPin,
-  Printer
+  Printer,
+  Flame
 } from "lucide-react";
 
 import { fetchLiveTelemetry } from "./services/api";
@@ -35,6 +36,7 @@ import EpisodeForecastExplorer from "./pages/EpisodeForecastExplorer";
 import PolicySimulator from "./pages/PolicySimulator";
 import DataMethodology from "./pages/DataMethodology";
 import ResearchInsights from "./pages/ResearchInsights";
+import FireTransportRisk from "./pages/FireTransportRisk";
 
 interface SubTab {
   id: string;
@@ -95,6 +97,12 @@ const NAV_HUBS: NavHub[] = [
         label: "Station Exposure Gradient",
         icon: MapPin,
         description: "Spatial PM2.5 inequality across 40 continuous CAAQM ground monitoring stations in Delhi NCT."
+      },
+      {
+        id: "fire-risk",
+        label: "Fire Transport Risk Ranking",
+        icon: Flame,
+        description: "Rank Punjab–Haryana fire clusters by FRP × distance-decay proximity to Delhi (wind-free, sample data 2024)."
       }
     ]
   },
@@ -377,6 +385,7 @@ export default function App() {
           {activeTab === "overview" && <EnvironmentalOverview />}
           {activeTab === "map" && <FireTransportMap />}
           {activeTab === "spatial" && <SpatialInequality />}
+          {activeTab === "fire-risk" && <FireTransportRisk />}
           {activeTab === "pollution" && <PollutionAnalysis />}
           {activeTab === "models" && <ModelLaboratory />}
           {activeTab === "shap" && <AttributionShap />}
