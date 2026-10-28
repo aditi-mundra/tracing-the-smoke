@@ -1,0 +1,14 @@
+[
+  "tests/test_phase1_final_fixes.py::test_01_era5_blh_gap_documentation",
+  "tests/test_phase1_final_fixes.py::test_02_era5_wind_units_and_ist",
+  "tests/test_phase1_final_fixes.py::test_03_firms_utc_to_ist_conversion",
+  "tests/test_phase1_final_fixes.py::test_04_firms_ist_date_consistency",
+  "tests/test_phase1_final_fixes.py::test_05_confirmed_zero_fires_vs_gap",
+  "tests/test_phase1_final_fixes.py::test_06_multisource_eligibility_tiers",
+  "tests/test_phase1_final_fixes.py::test_07_severe_episodes_in_multisource",
+  "tests/test_spatial_features.py::test_calculate_bearing",
+  "tests/test_spatial_features.py::test_distance_decay_weight",
+  "tests/test_spatial_features.py::test_haversine_distance",
+  "tests/test_spatial_features.py::test_wind_alignment",
+  "tests/test_spatial_features.py::test_wind_transport_direction"
+]
