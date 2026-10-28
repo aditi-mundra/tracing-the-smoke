@@ -1,0 +1,709 @@
+{
+  "query_time": "2026-10-26 02:55:22 IST",
+  "system_mode": "REAL_TIME_OPERATIONAL",
+  "weather": {
+    "timestamp_ist": "2026-10-26T02:45",
+    "temperature_c": 19.9,
+    "relative_humidity_pct": 76.0,
+    "surface_pressure_hpa": 990.1,
+    "wind_speed_ms": 1.36,
+    "wind_direction_deg": 278.0,
+    "boundary_layer_height_m": 45.0,
+    "ventilation_index": 61.2,
+    "status": "LIVE_NWP_SYNCED",
+    "source": "Open-Meteo High-Resolution Forecast Engine"
+  },
+  "transport_analysis": {
+    "prevailing_wind_direction_deg": 278.0,
+    "wind_direction_label": "North-Westerly (315\u00b0 NW)",
+    "corridor_orientation": "Direct Punjab/Haryana \u2192 Delhi Transit",
+    "is_upwind_corridor_active": true,
+    "advection_alignment_coefficient": 0.799,
+    "inversion_trapping_active": true,
+    "inversion_description": "Shallow nocturnal boundary layer trap (< 300m) actively suppressing vertical dispersion",
+    "estimated_plume_transit_hours": 44.9,
+    "smoke_transport_risk": "EMERGENCY",
+    "ventilation_status": "POOR_DISPERSION"
+  },
+  "air_quality_telemetry": {
+    "active_delhi_stations": 35,
+    "latest_background_pm25": 126.15,
+    "live_estimated_pm25": 137.5,
+    "is_severe_episode": false,
+    "grap_recommendation": "GRAP Stage II (Very Poor \u2014 Diesel generator restrictions, dust suppression)",
+    "aqi_category": "Very Poor (121\u2013250 \u00b5g/m\u00b3)"
+  },
+  "stations_telemetry": [
+    {
+      "station_id": "site_103",
+      "station_name": "Anand Vihar, Delhi - DPCC",
+      "district": "East Delhi",
+      "latitude": 28.6476,
+      "longitude": 77.3158,
+      "live_pm25": 171.2,
+      "status": "Operational",
+      "category": "Very Poor"
+    },
+    {
+      "station_id": "site_104",
+      "station_name": "Punjabi Bagh, Delhi - DPCC",
+      "district": "West Delhi",
+      "latitude": 28.674,
+      "longitude": 77.131,
+      "live_pm25": 116.2,
+      "status": "Operational",
+      "category": "Moderate / Poor"
+    },
+    {
+      "station_id": "site_105",
+      "station_name": "R K Puram, Delhi - DPCC",
+      "district": "South West Delhi",
+      "latitude": 28.5632,
+      "longitude": 77.1869,
+      "live_pm25": 120.2,
+      "status": "Operational",
+      "category": "Moderate / Poor"
+    },
+    {
+      "station_id": "site_106",
+      "station_name": "Mandir Marg, Delhi - DPCC",
+      "district": "Central Delhi",
+      "latitude": 28.6364,
+      "longitude": 77.201,
+      "live_pm25": 127.2,
+      "status": "Operational",
+      "category": "Very Poor"
+    },
+    {
+      "station_id": "site_107",
+      "station_name": "Jahangirpuri, Delhi - DPCC",
+      "district": "North West Delhi",
+      "latitude": 28.7328,
+      "longitude": 77.1706,
+      "live_pm25": 171.2,
+      "status": "Operational",
+      "category": "Very Poor"
+    },
+    {
+      "station_id": "site_108",
+      "station_name": "Rohini, Delhi - DPCC",
+      "district": "North West Delhi",
+      "latitude": 28.7325,
+      "longitude": 77.1199,
+      "live_pm25": 134.2,
+      "status": "Operational",
+      "category": "Very Poor"
+    },
+    {
+      "station_id": "site_109",
+      "station_name": "Bawana, Delhi - DPCC",
+      "district": "North West Delhi",
+      "latitude": 28.7762,
+      "longitude": 77.0511,
+      "live_pm25": 123.2,
+      "status": "Operational",
+      "category": "Very Poor"
+    },
+    {
+      "station_id": "site_110",
+      "station_name": "Narela, Delhi - DPCC",
+      "district": "North West Delhi",
+      "latitude": 28.8228,
+      "longitude": 77.1019,
+      "live_pm25": 133.2,
+      "status": "Operational",
+      "category": "Very Poor"
+    },
+    {
+      "station_id": "site_111",
+      "station_name": "Wazirpur, Delhi - DPCC",
+      "district": "North West Delhi",
+      "latitude": 28.6998,
+      "longitude": 77.1654,
+      "live_pm25": 171.2,
+      "status": "Operational",
+      "category": "Very Poor"
+    },
+    {
+      "station_id": "site_112",
+      "station_name": "Ashok Vihar, Delhi - DPCC",
+      "district": "North Delhi",
+      "latitude": 28.6954,
+      "longitude": 77.1817,
+      "live_pm25": 138.2,
+      "status": "Operational",
+      "category": "Very Poor"
+    },
+    {
+      "station_id": "site_113",
+      "station_name": "Sonia Vihar, Delhi - DPCC",
+      "district": "North East Delhi",
+      "latitude": 28.7105,
+      "longitude": 77.2494,
+      "live_pm25": 135.2,
+      "status": "Operational",
+      "category": "Very Poor"
+    },
+    {
+      "station_id": "site_114",
+      "station_name": "Patparganj, Delhi - DPCC",
+      "district": "East Delhi",
+      "latitude": 28.6238,
+      "longitude": 77.2873,
+      "live_pm25": 134.2,
+      "status": "Operational",
+      "category": "Very Poor"
+    },
+    {
+      "station_id": "site_115",
+      "station_name": "Vivek Vihar, Delhi - DPCC",
+      "district": "East Delhi",
+      "latitude": 28.6723,
+      "longitude": 77.3153,
+      "live_pm25": 119.2,
+      "status": "Operational",
+      "category": "Moderate / Poor"
+    },
+    {
+      "station_id": "site_116",
+      "station_name": "Okhla Phase-2, Delhi - DPCC",
+      "district": "South East Delhi",
+      "latitude": 28.5308,
+      "longitude": 77.2713,
+      "live_pm25": 124.2,
+      "status": "Operational",
+      "category": "Very Poor"
+    },
+    {
+      "station_id": "site_117",
+      "station_name": "Sri Aurobindo Marg, Delhi - DPCC",
+      "district": "South Delhi",
+      "latitude": 28.5448,
+      "longitude": 77.2016,
+      "live_pm25": 136.2,
+      "status": "Operational",
+      "category": "Very Poor"
+    },
+    {
+      "station_id": "site_118",
+      "station_name": "Dr. Karni Singh Shooting Range, Delhi - DPCC",
+      "district": "South Delhi",
+      "latitude": 28.4986,
+      "longitude": 77.2648,
+      "live_pm25": 96.2,
+      "status": "Operational",
+      "category": "Moderate / Poor"
+    },
+    {
+      "station_id": "site_119",
+      "station_name": "Alipur, Delhi - DPCC",
+      "district": "North Delhi",
+      "latitude": 28.8153,
+      "longitude": 77.153,
+      "live_pm25": 130.2,
+      "status": "Operational",
+      "category": "Very Poor"
+    },
+    {
+      "station_id": "site_120",
+      "station_name": "Mundka, Delhi - DPCC",
+      "district": "West Delhi",
+      "latitude": 28.6847,
+      "longitude": 77.0766,
+      "live_pm25": 118.2,
+      "status": "Operational",
+      "category": "Moderate / Poor"
+    },
+    {
+      "station_id": "site_121",
+      "station_name": "Najafgarh, Delhi - DPCC",
+      "district": "South West Delhi",
+      "latitude": 28.5702,
+      "longitude": 76.9338,
+      "live_pm25": 120.2,
+      "status": "Operational",
+      "category": "Moderate / Poor"
+    },
+    {
+      "station_id": "site_122",
+      "station_name": "Dwarka-Sector 8, Delhi - DPCC",
+      "district": "South West Delhi",
+      "latitude": 28.571,
+      "longitude": 77.0667,
+      "live_pm25": 124.2,
+      "status": "Operational",
+      "category": "Very Poor"
+    },
+    {
+      "station_id": "site_123",
+      "station_name": "IGI Airport (T3), Delhi - IMD",
+      "district": "South West Delhi",
+      "latitude": 28.5628,
+      "longitude": 77.0947,
+      "live_pm25": 115.2,
+      "status": "Operational",
+      "category": "Moderate / Poor"
+    },
+    {
+      "station_id": "site_124",
+      "station_name": "Aya Nagar, Delhi - IMD",
+      "district": "South Delhi",
+      "latitude": 28.4707,
+      "longitude": 77.1099,
+      "live_pm25": 96.2,
+      "status": "Operational",
+      "category": "Moderate / Poor"
+    },
+    {
+      "station_id": "site_125",
+      "station_name": "Burari Crossing, Delhi - IMD",
+      "district": "North Delhi",
+      "latitude": 28.7257,
+      "longitude": 77.2012,
+      "live_pm25": 127.2,
+      "status": "Operational",
+      "category": "Very Poor"
+    },
+    {
+      "station_id": "site_126",
+      "station_name": "CRRI Mathura Road, Delhi - IMD",
+      "district": "South East Delhi",
+      "latitude": 28.5512,
+      "longitude": 77.2736,
+      "live_pm25": 127.2,
+      "status": "Operational",
+      "category": "Very Poor"
+    },
+    {
+      "station_id": "site_127",
+      "station_name": "Lodhi Road, Delhi - IMD",
+      "district": "Central Delhi",
+      "latitude": 28.5918,
+      "longitude": 77.2273,
+      "live_pm25": 133.2,
+      "status": "Operational",
+      "category": "Very Poor"
+    },
+    {
+      "station_id": "site_128",
+      "station_name": "North Campus, DU, Delhi - IMD",
+      "district": "North Delhi",
+      "latitude": 28.6574,
+      "longitude": 77.1578,
+      "live_pm25": 136.2,
+      "status": "Operational",
+      "category": "Very Poor"
+    },
+    {
+      "station_id": "site_129",
+      "station_name": "Pusa, Delhi - IMD",
+      "district": "Central Delhi",
+      "latitude": 28.6396,
+      "longitude": 77.1463,
+      "live_pm25": 135.2,
+      "status": "Operational",
+      "category": "Very Poor"
+    },
+    {
+      "station_id": "site_130",
+      "station_name": "Pusa, Delhi - DPCC",
+      "district": "Central Delhi",
+      "latitude": 28.6368,
+      "longitude": 77.1565,
+      "live_pm25": 115.2,
+      "status": "Operational",
+      "category": "Moderate / Poor"
+    },
+    {
+      "station_id": "site_131",
+      "station_name": "Shadipur, Delhi - CPCB",
+      "district": "West Delhi",
+      "latitude": 28.6515,
+      "longitude": 77.1581,
+      "live_pm25": 119.2,
+      "status": "Operational",
+      "category": "Moderate / Poor"
+    },
+    {
+      "station_id": "site_132",
+      "station_name": "Sirifort, Delhi - CPCB",
+      "district": "South Delhi",
+      "latitude": 28.5504,
+      "longitude": 77.2159,
+      "live_pm25": 120.2,
+      "status": "Operational",
+      "category": "Moderate / Poor"
+    },
+    {
+      "station_id": "site_133",
+      "station_name": "NSIT Dwarka, Delhi - CPCB",
+      "district": "South West Delhi",
+      "latitude": 28.609,
+      "longitude": 77.0326,
+      "live_pm25": 127.2,
+      "status": "Operational",
+      "category": "Very Poor"
+    },
+    {
+      "station_id": "site_134",
+      "station_name": "Major Dhyan Chand National Stadium, Delhi - DPCC",
+      "district": "Central Delhi",
+      "latitude": 28.6113,
+      "longitude": 77.2377,
+      "live_pm25": 131.2,
+      "status": "Operational",
+      "category": "Very Poor"
+    },
+    {
+      "station_id": "site_135",
+      "station_name": "Jawaharlal Nehru Stadium, Delhi - DPCC",
+      "district": "South Delhi",
+      "latitude": 28.5802,
+      "longitude": 77.2338,
+      "live_pm25": 116.2,
+      "status": "Operational",
+      "category": "Moderate / Poor"
+    },
+    {
+      "station_id": "site_136",
+      "station_name": "Nehru Nagar, Delhi - DPCC",
+      "district": "South Delhi",
+      "latitude": 28.5679,
+      "longitude": 77.2505,
+      "live_pm25": 120.2,
+      "status": "Operational",
+      "category": "Moderate / Poor"
+    },
+    {
+      "station_id": "site_137",
+      "station_name": "Chandni Chowk, Delhi - IITM",
+      "district": "Central Delhi",
+      "latitude": 28.656,
+      "longitude": 77.23,
+      "live_pm25": 129.2,
+      "status": "Operational",
+      "category": "Very Poor"
+    },
+    {
+      "station_id": "site_138",
+      "station_name": "PGDAV College, Sriniwaspuri, Delhi - DPCC",
+      "district": "South East Delhi",
+      "latitude": 28.5636,
+      "longitude": 77.2588,
+      "live_pm25": 128.2,
+      "status": "Operational",
+      "category": "Very Poor"
+    },
+    {
+      "station_id": "site_139",
+      "station_name": "DTU, Delhi - CPCB",
+      "district": "North West Delhi",
+      "latitude": 28.7501,
+      "longitude": 77.1113,
+      "live_pm25": 138.2,
+      "status": "Operational",
+      "category": "Very Poor"
+    },
+    {
+      "station_id": "site_140",
+      "station_name": "ITO, Delhi - CPCB",
+      "district": "Central Delhi",
+      "latitude": 28.6286,
+      "longitude": 77.241,
+      "live_pm25": 129.2,
+      "status": "Operational",
+      "category": "Very Poor"
+    },
+    {
+      "station_id": "site_141",
+      "station_name": "Pooth Khurd, Delhi - DPCC",
+      "district": "North West Delhi",
+      "latitude": 28.7758,
+      "longitude": 77.0392,
+      "live_pm25": 117.2,
+      "status": "Operational",
+      "category": "Moderate / Poor"
+    },
+    {
+      "station_id": "site_142",
+      "station_name": "Bamnoli, Delhi - DPCC",
+      "district": "South West Delhi",
+      "latitude": 28.5583,
+      "longitude": 77.0142,
+      "live_pm25": 116.2,
+      "status": "Operational",
+      "category": "Moderate / Poor"
+    }
+  ],
+  "hourly_forecast_24h": [
+    {
+      "time": "00:00",
+      "datetime": "2026-10-26T00:00",
+      "temperature_c": 21.3,
+      "wind_speed_ms": 1.14,
+      "wind_direction_deg": 268.0,
+      "boundary_layer_height_m": 45.0,
+      "ventilation_index": 51.3,
+      "forecast_pm25": 160.9,
+      "is_severe": false
+    },
+    {
+      "time": "01:00",
+      "datetime": "2026-10-26T01:00",
+      "temperature_c": 20.7,
+      "wind_speed_ms": 1.25,
+      "wind_direction_deg": 272.0,
+      "boundary_layer_height_m": 55.0,
+      "ventilation_index": 68.8,
+      "forecast_pm25": 162.1,
+      "is_severe": false
+    },
+    {
+      "time": "02:00",
+      "datetime": "2026-10-26T02:00",
+      "temperature_c": 20.1,
+      "wind_speed_ms": 1.36,
+      "wind_direction_deg": 276.0,
+      "boundary_layer_height_m": 65.0,
+      "ventilation_index": 88.4,
+      "forecast_pm25": 163.2,
+      "is_severe": false
+    },
+    {
+      "time": "03:00",
+      "datetime": "2026-10-26T03:00",
+      "temperature_c": 19.6,
+      "wind_speed_ms": 1.28,
+      "wind_direction_deg": 283.0,
+      "boundary_layer_height_m": 60.0,
+      "ventilation_index": 76.8,
+      "forecast_pm25": 165.0,
+      "is_severe": false
+    },
+    {
+      "time": "04:00",
+      "datetime": "2026-10-26T04:00",
+      "temperature_c": 19.2,
+      "wind_speed_ms": 1.19,
+      "wind_direction_deg": 292.0,
+      "boundary_layer_height_m": 55.0,
+      "ventilation_index": 65.5,
+      "forecast_pm25": 166.8,
+      "is_severe": false
+    },
+    {
+      "time": "05:00",
+      "datetime": "2026-10-26T05:00",
+      "temperature_c": 18.9,
+      "wind_speed_ms": 1.19,
+      "wind_direction_deg": 303.0,
+      "boundary_layer_height_m": 50.0,
+      "ventilation_index": 59.5,
+      "forecast_pm25": 168.3,
+      "is_severe": false
+    },
+    {
+      "time": "06:00",
+      "datetime": "2026-10-26T06:00",
+      "temperature_c": 18.6,
+      "wind_speed_ms": 1.25,
+      "wind_direction_deg": 304.0,
+      "boundary_layer_height_m": 55.0,
+      "ventilation_index": 68.8,
+      "forecast_pm25": 168.4,
+      "is_severe": false
+    },
+    {
+      "time": "07:00",
+      "datetime": "2026-10-26T07:00",
+      "temperature_c": 19.9,
+      "wind_speed_ms": 1.36,
+      "wind_direction_deg": 309.0,
+      "boundary_layer_height_m": 75.0,
+      "ventilation_index": 102.0,
+      "forecast_pm25": 168.7,
+      "is_severe": false
+    },
+    {
+      "time": "08:00",
+      "datetime": "2026-10-26T08:00",
+      "temperature_c": 21.6,
+      "wind_speed_ms": 1.11,
+      "wind_direction_deg": 309.0,
+      "boundary_layer_height_m": 115.0,
+      "ventilation_index": 127.7,
+      "forecast_pm25": 168.7,
+      "is_severe": false
+    },
+    {
+      "time": "09:00",
+      "datetime": "2026-10-26T09:00",
+      "temperature_c": 23.8,
+      "wind_speed_ms": 1.0,
+      "wind_direction_deg": 315.0,
+      "boundary_layer_height_m": 190.0,
+      "ventilation_index": 190.0,
+      "forecast_pm25": 168.8,
+      "is_severe": false
+    },
+    {
+      "time": "10:00",
+      "datetime": "2026-10-26T10:00",
+      "temperature_c": 26.1,
+      "wind_speed_ms": 1.36,
+      "wind_direction_deg": 327.0,
+      "boundary_layer_height_m": 450.0,
+      "ventilation_index": 612.0,
+      "forecast_pm25": 164.5,
+      "is_severe": false
+    },
+    {
+      "time": "11:00",
+      "datetime": "2026-10-26T11:00",
+      "temperature_c": 27.7,
+      "wind_speed_ms": 2.0,
+      "wind_direction_deg": 323.0,
+      "boundary_layer_height_m": 815.0,
+      "ventilation_index": 1630.0,
+      "forecast_pm25": 142.1,
+      "is_severe": false
+    },
+    {
+      "time": "12:00",
+      "datetime": "2026-10-26T12:00",
+      "temperature_c": 28.9,
+      "wind_speed_ms": 2.39,
+      "wind_direction_deg": 323.0,
+      "boundary_layer_height_m": 1125.0,
+      "ventilation_index": 2688.8,
+      "forecast_pm25": 142.1,
+      "is_severe": false
+    },
+    {
+      "time": "13:00",
+      "datetime": "2026-10-26T13:00",
+      "temperature_c": 29.5,
+      "wind_speed_ms": 2.58,
+      "wind_direction_deg": 324.0,
+      "boundary_layer_height_m": 1235.0,
+      "ventilation_index": 3186.3,
+      "forecast_pm25": 142.0,
+      "is_severe": false
+    },
+    {
+      "time": "14:00",
+      "datetime": "2026-10-26T14:00",
+      "temperature_c": 29.6,
+      "wind_speed_ms": 2.67,
+      "wind_direction_deg": 326.0,
+      "boundary_layer_height_m": 1250.0,
+      "ventilation_index": 3337.5,
+      "forecast_pm25": 141.9,
+      "is_severe": false
+    },
+    {
+      "time": "15:00",
+      "datetime": "2026-10-26T15:00",
+      "temperature_c": 29.3,
+      "wind_speed_ms": 2.53,
+      "wind_direction_deg": 321.0,
+      "boundary_layer_height_m": 1175.0,
+      "ventilation_index": 2972.7,
+      "forecast_pm25": 142.2,
+      "is_severe": false
+    },
+    {
+      "time": "16:00",
+      "datetime": "2026-10-26T16:00",
+      "temperature_c": 28.4,
+      "wind_speed_ms": 2.17,
+      "wind_direction_deg": 310.0,
+      "boundary_layer_height_m": 985.0,
+      "ventilation_index": 2137.4,
+      "forecast_pm25": 142.2,
+      "is_severe": false
+    },
+    {
+      "time": "17:00",
+      "datetime": "2026-10-26T17:00",
+      "temperature_c": 26.1,
+      "wind_speed_ms": 1.5,
+      "wind_direction_deg": 296.0,
+      "boundary_layer_height_m": 230.0,
+      "ventilation_index": 345.0,
+      "forecast_pm25": 167.4,
+      "is_severe": false
+    },
+    {
+      "time": "18:00",
+      "datetime": "2026-10-26T18:00",
+      "temperature_c": 24.8,
+      "wind_speed_ms": 1.61,
+      "wind_direction_deg": 296.0,
+      "boundary_layer_height_m": 155.0,
+      "ventilation_index": 249.6,
+      "forecast_pm25": 167.4,
+      "is_severe": false
+    },
+    {
+      "time": "19:00",
+      "datetime": "2026-10-26T19:00",
+      "temperature_c": 23.8,
+      "wind_speed_ms": 1.47,
+      "wind_direction_deg": 298.0,
+      "boundary_layer_height_m": 110.0,
+      "ventilation_index": 161.7,
+      "forecast_pm25": 167.7,
+      "is_severe": false
+    },
+    {
+      "time": "20:00",
+      "datetime": "2026-10-26T20:00",
+      "temperature_c": 23.0,
+      "wind_speed_ms": 1.39,
+      "wind_direction_deg": 296.0,
+      "boundary_layer_height_m": 75.0,
+      "ventilation_index": 104.2,
+      "forecast_pm25": 167.4,
+      "is_severe": false
+    },
+    {
+      "time": "21:00",
+      "datetime": "2026-10-26T21:00",
+      "temperature_c": 22.3,
+      "wind_speed_ms": 1.39,
+      "wind_direction_deg": 291.0,
+      "boundary_layer_height_m": 60.0,
+      "ventilation_index": 83.4,
+      "forecast_pm25": 166.6,
+      "is_severe": false
+    },
+    {
+      "time": "22:00",
+      "datetime": "2026-10-26T22:00",
+      "temperature_c": 21.8,
+      "wind_speed_ms": 1.53,
+      "wind_direction_deg": 293.0,
+      "boundary_layer_height_m": 75.0,
+      "ventilation_index": 114.8,
+      "forecast_pm25": 167.0,
+      "is_severe": false
+    },
+    {
+      "time": "23:00",
+      "datetime": "2026-10-26T23:00",
+      "temperature_c": 21.2,
+      "wind_speed_ms": 1.56,
+      "wind_direction_deg": 292.0,
+      "boundary_layer_height_m": 90.0,
+      "ventilation_index": 140.4,
+      "forecast_pm25": 166.8,
+      "is_severe": false
+    }
+  ],
+  "operational_manifest": {
+    "telemetry_stream": "Live Open-Meteo NWP Stream + CPCB Telemetry Ingestion",
+    "model_in_use": "XGBoost (Experiment C: Physics-Guided Advection)",
+    "next_sync_sec": 120
+  }
+}

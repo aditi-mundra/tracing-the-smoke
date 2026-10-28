@@ -1,0 +1,322 @@
+[
+  {
+    "station_id": "site_103",
+    "station_name": "Anand Vihar, Delhi - DPCC",
+    "latitude": 28.6476,
+    "longitude": 77.3158,
+    "has_pm25": true,
+    "district": "East Delhi"
+  },
+  {
+    "station_id": "site_104",
+    "station_name": "Punjabi Bagh, Delhi - DPCC",
+    "latitude": 28.674,
+    "longitude": 77.131,
+    "has_pm25": true,
+    "district": "West Delhi"
+  },
+  {
+    "station_id": "site_105",
+    "station_name": "R K Puram, Delhi - DPCC",
+    "latitude": 28.5632,
+    "longitude": 77.1869,
+    "has_pm25": true,
+    "district": "South West Delhi"
+  },
+  {
+    "station_id": "site_106",
+    "station_name": "Mandir Marg, Delhi - DPCC",
+    "latitude": 28.6364,
+    "longitude": 77.201,
+    "has_pm25": true,
+    "district": "Central Delhi"
+  },
+  {
+    "station_id": "site_107",
+    "station_name": "Jahangirpuri, Delhi - DPCC",
+    "latitude": 28.7328,
+    "longitude": 77.1706,
+    "has_pm25": true,
+    "district": "North West Delhi"
+  },
+  {
+    "station_id": "site_108",
+    "station_name": "Rohini, Delhi - DPCC",
+    "latitude": 28.7325,
+    "longitude": 77.1199,
+    "has_pm25": true,
+    "district": "North West Delhi"
+  },
+  {
+    "station_id": "site_109",
+    "station_name": "Bawana, Delhi - DPCC",
+    "latitude": 28.7762,
+    "longitude": 77.0511,
+    "has_pm25": true,
+    "district": "North West Delhi"
+  },
+  {
+    "station_id": "site_110",
+    "station_name": "Narela, Delhi - DPCC",
+    "latitude": 28.8228,
+    "longitude": 77.1019,
+    "has_pm25": true,
+    "district": "North West Delhi"
+  },
+  {
+    "station_id": "site_111",
+    "station_name": "Wazirpur, Delhi - DPCC",
+    "latitude": 28.6998,
+    "longitude": 77.1654,
+    "has_pm25": true,
+    "district": "North West Delhi"
+  },
+  {
+    "station_id": "site_112",
+    "station_name": "Ashok Vihar, Delhi - DPCC",
+    "latitude": 28.6954,
+    "longitude": 77.1817,
+    "has_pm25": true,
+    "district": "North Delhi"
+  },
+  {
+    "station_id": "site_113",
+    "station_name": "Sonia Vihar, Delhi - DPCC",
+    "latitude": 28.7105,
+    "longitude": 77.2494,
+    "has_pm25": true,
+    "district": "North East Delhi"
+  },
+  {
+    "station_id": "site_114",
+    "station_name": "Patparganj, Delhi - DPCC",
+    "latitude": 28.6238,
+    "longitude": 77.2873,
+    "has_pm25": true,
+    "district": "East Delhi"
+  },
+  {
+    "station_id": "site_115",
+    "station_name": "Vivek Vihar, Delhi - DPCC",
+    "latitude": 28.6723,
+    "longitude": 77.3153,
+    "has_pm25": true,
+    "district": "East Delhi"
+  },
+  {
+    "station_id": "site_116",
+    "station_name": "Okhla Phase-2, Delhi - DPCC",
+    "latitude": 28.5308,
+    "longitude": 77.2713,
+    "has_pm25": true,
+    "district": "South East Delhi"
+  },
+  {
+    "station_id": "site_117",
+    "station_name": "Sri Aurobindo Marg, Delhi - DPCC",
+    "latitude": 28.5448,
+    "longitude": 77.2016,
+    "has_pm25": true,
+    "district": "South Delhi"
+  },
+  {
+    "station_id": "site_118",
+    "station_name": "Dr. Karni Singh Shooting Range, Delhi - DPCC",
+    "latitude": 28.4986,
+    "longitude": 77.2648,
+    "has_pm25": true,
+    "district": "South Delhi"
+  },
+  {
+    "station_id": "site_119",
+    "station_name": "Alipur, Delhi - DPCC",
+    "latitude": 28.8153,
+    "longitude": 77.153,
+    "has_pm25": true,
+    "district": "North Delhi"
+  },
+  {
+    "station_id": "site_120",
+    "station_name": "Mundka, Delhi - DPCC",
+    "latitude": 28.6847,
+    "longitude": 77.0766,
+    "has_pm25": true,
+    "district": "West Delhi"
+  },
+  {
+    "station_id": "site_121",
+    "station_name": "Najafgarh, Delhi - DPCC",
+    "latitude": 28.5702,
+    "longitude": 76.9338,
+    "has_pm25": true,
+    "district": "South West Delhi"
+  },
+  {
+    "station_id": "site_122",
+    "station_name": "Dwarka-Sector 8, Delhi - DPCC",
+    "latitude": 28.571,
+    "longitude": 77.0667,
+    "has_pm25": true,
+    "district": "South West Delhi"
+  },
+  {
+    "station_id": "site_123",
+    "station_name": "IGI Airport (T3), Delhi - IMD",
+    "latitude": 28.5628,
+    "longitude": 77.0947,
+    "has_pm25": true,
+    "district": "South West Delhi"
+  },
+  {
+    "station_id": "site_124",
+    "station_name": "Aya Nagar, Delhi - IMD",
+    "latitude": 28.4707,
+    "longitude": 77.1099,
+    "has_pm25": true,
+    "district": "South Delhi"
+  },
+  {
+    "station_id": "site_125",
+    "station_name": "Burari Crossing, Delhi - IMD",
+    "latitude": 28.7257,
+    "longitude": 77.2012,
+    "has_pm25": true,
+    "district": "North Delhi"
+  },
+  {
+    "station_id": "site_126",
+    "station_name": "CRRI Mathura Road, Delhi - IMD",
+    "latitude": 28.5512,
+    "longitude": 77.2736,
+    "has_pm25": true,
+    "district": "South East Delhi"
+  },
+  {
+    "station_id": "site_127",
+    "station_name": "Lodhi Road, Delhi - IMD",
+    "latitude": 28.5918,
+    "longitude": 77.2273,
+    "has_pm25": true,
+    "district": "Central Delhi"
+  },
+  {
+    "station_id": "site_128",
+    "station_name": "North Campus, DU, Delhi - IMD",
+    "latitude": 28.6574,
+    "longitude": 77.1578,
+    "has_pm25": true,
+    "district": "North Delhi"
+  },
+  {
+    "station_id": "site_129",
+    "station_name": "Pusa, Delhi - IMD",
+    "latitude": 28.6396,
+    "longitude": 77.1463,
+    "has_pm25": true,
+    "district": "Central Delhi"
+  },
+  {
+    "station_id": "site_130",
+    "station_name": "Pusa, Delhi - DPCC",
+    "latitude": 28.6368,
+    "longitude": 77.1565,
+    "has_pm25": true,
+    "district": "Central Delhi"
+  },
+  {
+    "station_id": "site_131",
+    "station_name": "Shadipur, Delhi - CPCB",
+    "latitude": 28.6515,
+    "longitude": 77.1581,
+    "has_pm25": true,
+    "district": "West Delhi"
+  },
+  {
+    "station_id": "site_132",
+    "station_name": "Sirifort, Delhi - CPCB",
+    "latitude": 28.5504,
+    "longitude": 77.2159,
+    "has_pm25": true,
+    "district": "South Delhi"
+  },
+  {
+    "station_id": "site_133",
+    "station_name": "NSIT Dwarka, Delhi - CPCB",
+    "latitude": 28.609,
+    "longitude": 77.0326,
+    "has_pm25": true,
+    "district": "South West Delhi"
+  },
+  {
+    "station_id": "site_134",
+    "station_name": "Major Dhyan Chand National Stadium, Delhi - DPCC",
+    "latitude": 28.6113,
+    "longitude": 77.2377,
+    "has_pm25": true,
+    "district": "Central Delhi"
+  },
+  {
+    "station_id": "site_135",
+    "station_name": "Jawaharlal Nehru Stadium, Delhi - DPCC",
+    "latitude": 28.5802,
+    "longitude": 77.2338,
+    "has_pm25": true,
+    "district": "South Delhi"
+  },
+  {
+    "station_id": "site_136",
+    "station_name": "Nehru Nagar, Delhi - DPCC",
+    "latitude": 28.5679,
+    "longitude": 77.2505,
+    "has_pm25": true,
+    "district": "South Delhi"
+  },
+  {
+    "station_id": "site_137",
+    "station_name": "Chandni Chowk, Delhi - IITM",
+    "latitude": 28.656,
+    "longitude": 77.23,
+    "has_pm25": true,
+    "district": "Central Delhi"
+  },
+  {
+    "station_id": "site_138",
+    "station_name": "PGDAV College, Sriniwaspuri, Delhi - DPCC",
+    "latitude": 28.5636,
+    "longitude": 77.2588,
+    "has_pm25": true,
+    "district": "South East Delhi"
+  },
+  {
+    "station_id": "site_139",
+    "station_name": "DTU, Delhi - CPCB",
+    "latitude": 28.7501,
+    "longitude": 77.1113,
+    "has_pm25": true,
+    "district": "North West Delhi"
+  },
+  {
+    "station_id": "site_140",
+    "station_name": "ITO, Delhi - CPCB",
+    "latitude": 28.6286,
+    "longitude": 77.241,
+    "has_pm25": true,
+    "district": "Central Delhi"
+  },
+  {
+    "station_id": "site_141",
+    "station_name": "Pooth Khurd, Delhi - DPCC",
+    "latitude": 28.7758,
+    "longitude": 77.0392,
+    "has_pm25": true,
+    "district": "North West Delhi"
+  },
+  {
+    "station_id": "site_142",
+    "station_name": "Bamnoli, Delhi - DPCC",
+    "latitude": 28.5583,
+    "longitude": 77.0142,
+    "has_pm25": true,
+    "district": "South West Delhi"
+  }
+]

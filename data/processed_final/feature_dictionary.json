@@ -1,0 +1,54 @@
+{
+  "experiments": {
+    "exp_a_baseline": {
+      "name": "Exp A: Baseline Meteorology",
+      "features": [
+        "pm25_lag1",
+        "pm25_lag2",
+        "temp_mean",
+        "wind_speed_mean",
+        "blh_mean",
+        "ventilation_index"
+      ]
+    },
+    "exp_b_basic_fires": {
+      "name": "Exp B: Basic Regional Fires",
+      "features": [
+        "pm25_lag1",
+        "pm25_lag2",
+        "temp_mean",
+        "wind_speed_mean",
+        "blh_mean",
+        "ventilation_index",
+        "fire_count_total"
+      ]
+    },
+    "exp_c_engineered_fires": {
+      "name": "Exp C: Physics-Guided Fire Transport",
+      "features": [
+        "pm25_lag1",
+        "pm25_lag2",
+        "temp_mean",
+        "wind_speed_mean",
+        "blh_mean",
+        "ventilation_index",
+        "fire_count_total",
+        "fire_count_upwind",
+        "fire_upwind_weighted_frp"
+      ]
+    },
+    "mode_b_next_day_forecast": {
+      "name": "Mode B Next-Day Forecast",
+      "features": [
+        "delhi_daily_pm25_ugm3",
+        "pm25_lag1",
+        "fire_count_total",
+        "fire_count_upwind",
+        "fire_upwind_weighted_frp",
+        "wind_speed_mean",
+        "blh_mean",
+        "ventilation_index"
+      ]
+    }
+  }
+}
