@@ -12,6 +12,7 @@ import pandas as pd
 import numpy as np
 
 from backend.app.config import settings
+from src.models.counterfactual import add_pm25_lags, simulate_fire_reduction, DISCLAIMER as FIRE_SCENARIO_DISCLAIMER
 
 logger = logging.getLogger("data_service")
 
@@ -50,7 +51,7 @@ class DataService:
         # 2. Load Final ML Dataset
         ml_path = settings.DATA_PROCESSED_FINAL_DIR / "delhi_pm25_ml_dataset_final.parquet"
         if ml_path.exists():
-            self.ml_dataset = pd.read_parquet(ml_path)
+            self.ml_dataset = add_pm25_lags(pd.read_parquet(ml_path))
             # Ensure date_str column is present
             if "date_ist" in self.ml_dataset.columns and "date_str" not in self.ml_dataset.columns:
                 self.ml_dataset["date_str"] = self.ml_dataset["date_ist"]
@@ -647,5 +648,42 @@ class DataService:
             )
         }
 
-data_service = DataService.get_instance()
+    def simulate_fire_reduction_scenarios(self, date_str: str, model_name: str = "xgboost") -> Dict[str, Any]:
+        """Model-based PM2.5 scenarios for 25/50/75/100% fewer fires, using the trained Exp C model."""
+        model_keys = {
+            "xgboost": "xgboost",
+            "lightgbm": "lightgbm",
+            "random_forest": "random_forest",
+            "ridge": "ridge",
+            "linear_regression": "ridge",
+        }
+        key = model_keys.get(model_name.lower())
+        if key is None:
+            raise ValueError(f"Unsupported model '{model_name}'. Choose from {sorted(model_keys)}.")
 
+        if self.ml_dataset is None or self.ml_dataset.empty:
+            raise RuntimeError("ML dataset is not available for simulation.")
+        row = self.ml_dataset[self.ml_dataset["date_str"] == date_str]
+        if row.empty:
+            raise KeyError(f"Date '{date_str}' not found in the dataset.")
+
+        model = self.models.get(key)
+        imputer = self.imputers.get("exp_c")
+        feats = self.feature_lists.get("exp_c_engineered_fires")
+        scaler = self.scalers.get("exp_c") if key == "ridge" else None
+        if model is None or imputer is None or not feats or (key == "ridge" and scaler is None):
+            raise RuntimeError(
+                f"Trained Exp C artifacts for '{key}' are missing from {settings.TRAINED_MODELS_DIR}. "
+                "Run scripts/train_and_evaluate_final_models.py first."
+            )
+
+        result = simulate_fire_reduction(model, imputer, scaler, feats, row.iloc[0])
+        return {
+            "date": date_str,
+            "model_name": f"{key}_exp_c_engineered_fires",
+            "fire_features_scaled": [feature for feature in feats if "fire" in feature],
+            **result,
+            "scientific_disclaimer": FIRE_SCENARIO_DISCLAIMER,
+        }
+
+data_service = DataService.get_instance()

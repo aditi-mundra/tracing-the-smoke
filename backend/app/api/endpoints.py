@@ -18,7 +18,9 @@ from backend.app.schemas.api_models import (
     PredictionRequest,
     PredictionResponse,
     CounterfactualSimulationRequest,
-    CounterfactualSimulationResponse
+    CounterfactualSimulationResponse,
+    FireReductionRequest,
+    FireReductionResponse
 )
 from backend.app.services.data_service import data_service
 from backend.app.services.live_service import live_service
@@ -550,3 +552,15 @@ def simulate_counterfactual_intervention(req: CounterfactualSimulationRequest):
     except Exception as e:
         logger.error(f"Simulation error: {e}")
         raise HTTPException(status_code=500, detail=f"Simulation failed: {str(e)}")
+
+@router.post("/simulate/fire-reduction", response_model=FireReductionResponse)
+def simulate_fire_reduction_scenarios(req: FireReductionRequest):
+    """Model-based Delhi PM2.5 scenarios for 25/50/75/100% fewer Punjab-Haryana fires."""
+    try:
+        return data_service.simulate_fire_reduction_scenarios(req.date, req.model_name)
+    except KeyError as e:
+        raise HTTPException(status_code=404, detail=str(e))
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
+    except RuntimeError as e:
+        raise HTTPException(status_code=503, detail=str(e))

@@ -78,3 +78,22 @@ class CounterfactualSimulationResponse(BaseModel):
     source_attribution_breakdown: Dict[str, float]
     advisory_recommendation: str
     scientific_disclaimer: str
+
+class FireReductionRequest(BaseModel):
+    date: str = Field(description="Target calendar date (YYYY-MM-DD)")
+    model_name: str = Field(default="xgboost", description="'xgboost', 'lightgbm', 'random_forest' or 'ridge'")
+
+class FireReductionScenario(BaseModel):
+    fire_reduction_pct: int
+    baseline_pm25: float
+    scenario_pm25: float
+    absolute_difference: float
+    percent_difference: Optional[float] = None
+
+class FireReductionResponse(BaseModel):
+    date: str
+    model_name: str
+    fire_features_scaled: List[str]
+    baseline_pm25: float
+    scenarios: List[FireReductionScenario]
+    scientific_disclaimer: str
