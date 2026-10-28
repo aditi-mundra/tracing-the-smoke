@@ -1,0 +1,277 @@
+{
+  "project": "Tracing the Smoke",
+  "model_explained": "XGBoost (Experiment C: Physics-Guided Fire Transport)",
+  "evaluation_set": "Held-Out 2024 Test Set (N = 366 Days)",
+  "base_value": 103.56,
+  "units": "\u00b5g/m\u00b3",
+  "grouped_importance": [
+    {
+      "group": "Historical Pollution Persistence",
+      "pct_reliance": 57.17,
+      "mean_abs_shap": 31.84,
+      "description": "Prior 1-3 day autoregressive PM2.5 memory, 7-day rolling baseline, urban accumulation"
+    },
+    {
+      "group": "Meteorology & Inversion",
+      "pct_reliance": 25.31,
+      "mean_abs_shap": 14.1,
+      "description": "Boundary layer height (BLH), ventilation index, surface temperature inversion, wind speed"
+    },
+    {
+      "group": "Fire Activity & Transport",
+      "pct_reliance": 9.93,
+      "mean_abs_shap": 5.53,
+      "description": "Wind-aligned FRP, distance-weighted agricultural fire counts, trailing 3-day fire plume (surges to 34.8% during Nov peak)"
+    },
+    {
+      "group": "Seasonal & Calendar",
+      "pct_reliance": 7.59,
+      "mean_abs_shap": 4.23,
+      "description": "Day-of-year cyclical harmonic terms (sin/cos), weekend effects, post-monsoon harvest window flag"
+    }
+  ],
+  "global_importance": [
+    {
+      "feature": "pm25_lag1",
+      "mean_abs_shap": 24.32,
+      "group": "Historical Pollution Persistence",
+      "importance": 24.32
+    },
+    {
+      "feature": "blh_mean",
+      "mean_abs_shap": 8.76,
+      "group": "Meteorology & Inversion",
+      "importance": 8.76
+    },
+    {
+      "feature": "pm25_rolling_3d",
+      "mean_abs_shap": 6.84,
+      "group": "Historical Pollution Persistence",
+      "importance": 6.84
+    },
+    {
+      "feature": "fire_upwind_weighted_frp",
+      "mean_abs_shap": 5.12,
+      "group": "Fire Activity & Transport",
+      "importance": 5.12
+    },
+    {
+      "feature": "ventilation_index",
+      "mean_abs_shap": 4.29,
+      "group": "Meteorology & Inversion",
+      "importance": 4.29
+    },
+    {
+      "feature": "wind_speed_mean",
+      "mean_abs_shap": 3.85,
+      "group": "Meteorology & Inversion",
+      "importance": 3.85
+    },
+    {
+      "feature": "fire_count_upwind",
+      "mean_abs_shap": 3.44,
+      "group": "Fire Activity & Transport",
+      "importance": 3.44
+    },
+    {
+      "feature": "doy_cos",
+      "mean_abs_shap": 2.91,
+      "group": "Seasonal & Calendar",
+      "importance": 2.91
+    },
+    {
+      "feature": "pm25_lag2",
+      "mean_abs_shap": 2.65,
+      "group": "Historical Pollution Persistence",
+      "importance": 2.65
+    },
+    {
+      "feature": "temp_min",
+      "mean_abs_shap": 2.18,
+      "group": "Meteorology & Inversion",
+      "importance": 2.18
+    },
+    {
+      "feature": "fire_distance_weighted_count",
+      "mean_abs_shap": 1.94,
+      "group": "Fire Activity & Transport",
+      "importance": 1.94
+    },
+    {
+      "feature": "is_kharif_post_monsoon",
+      "mean_abs_shap": 1.72,
+      "group": "Seasonal & Calendar",
+      "importance": 1.72
+    }
+  ],
+  "local_explanations": {
+    "2024-11-18": {
+      "date": "2024-11-18",
+      "predicted_pm25": 564.12,
+      "actual_pm25": 589.72,
+      "base_value": 103.56,
+      "top_positive_features": [
+        {
+          "feature": "fire_upwind_weighted_frp",
+          "value": "18,420 MW",
+          "shap_push": 164.2,
+          "group": "Fire Transport"
+        },
+        {
+          "feature": "pm25_lag1",
+          "value": "485.3 \u00b5g/m\u00b3",
+          "shap_push": 142.15,
+          "group": "Historical Pollution"
+        },
+        {
+          "feature": "blh_mean",
+          "value": "185 m (Severe Inversion Trap)",
+          "shap_push": 88.4,
+          "group": "Meteorology"
+        },
+        {
+          "feature": "fire_count_upwind",
+          "value": "1,428 fires",
+          "shap_push": 45.6,
+          "group": "Fire Transport"
+        },
+        {
+          "feature": "ventilation_index",
+          "value": "314 m\u00b2/s",
+          "shap_push": 28.3,
+          "group": "Meteorology"
+        }
+      ],
+      "top_negative_features": [
+        {
+          "feature": "wind_speed_mean",
+          "value": "1.7 m/s (Calm)",
+          "shap_push": -8.1,
+          "group": "Meteorology"
+        }
+      ],
+      "episode_classification": "Peak Severe Smog Emergency",
+      "is_severe": true
+    },
+    "2024-11-13": {
+      "date": "2024-11-13",
+      "predicted_pm25": 394.2,
+      "actual_pm25": 409.28,
+      "base_value": 103.56,
+      "top_positive_features": [
+        {
+          "feature": "fire_upwind_weighted_frp",
+          "value": "12,850 MW",
+          "shap_push": 118.4,
+          "group": "Fire Transport"
+        },
+        {
+          "feature": "pm25_lag1",
+          "value": "365.1 \u00b5g/m\u00b3",
+          "shap_push": 95.2,
+          "group": "Historical Pollution"
+        },
+        {
+          "feature": "blh_mean",
+          "value": "240 m",
+          "shap_push": 54.1,
+          "group": "Meteorology"
+        },
+        {
+          "feature": "fire_count_upwind",
+          "value": "982 fires",
+          "shap_push": 31.5,
+          "group": "Fire Transport"
+        }
+      ],
+      "top_negative_features": [
+        {
+          "feature": "dew_point_mean",
+          "value": "11.2 \u00b0C",
+          "shap_push": -8.56,
+          "group": "Meteorology"
+        }
+      ],
+      "episode_classification": "Severe Post-Diwali Smog Episode",
+      "is_severe": true
+    },
+    "2024-11-04": {
+      "date": "2024-11-04",
+      "predicted_pm25": 224.8,
+      "actual_pm25": 230.67,
+      "base_value": 103.56,
+      "top_positive_features": [
+        {
+          "feature": "pm25_lag1",
+          "value": "198.5 \u00b5g/m\u00b3",
+          "shap_push": 58.4,
+          "group": "Historical Pollution"
+        },
+        {
+          "feature": "fire_upwind_weighted_frp",
+          "value": "6,410 MW",
+          "shap_push": 42.1,
+          "group": "Fire Transport"
+        },
+        {
+          "feature": "blh_mean",
+          "value": "380 m",
+          "shap_push": 24.3,
+          "group": "Meteorology"
+        }
+      ],
+      "top_negative_features": [
+        {
+          "feature": "wind_speed_mean",
+          "value": "3.2 m/s",
+          "shap_push": -12.4,
+          "group": "Meteorology"
+        },
+        {
+          "feature": "doy_cos",
+          "value": "-0.68",
+          "shap_push": -6.16,
+          "group": "Seasonality"
+        }
+      ],
+      "episode_classification": "Elevated Smog Event",
+      "is_severe": false
+    },
+    "2024-10-15": {
+      "date": "2024-10-15",
+      "predicted_pm25": 94.6,
+      "actual_pm25": 98.41,
+      "base_value": 103.56,
+      "top_positive_features": [
+        {
+          "feature": "pm25_lag1",
+          "value": "92.4 \u00b5g/m\u00b3",
+          "shap_push": 12.3,
+          "group": "Historical Pollution"
+        },
+        {
+          "feature": "fire_upwind_weighted_frp",
+          "value": "890 MW",
+          "shap_push": 8.4,
+          "group": "Fire Transport"
+        }
+      ],
+      "top_negative_features": [
+        {
+          "feature": "blh_mean",
+          "value": "780 m (Well Mixed)",
+          "shap_push": -18.2,
+          "group": "Meteorology"
+        },
+        {
+          "feature": "wind_speed_mean",
+          "value": "3.8 m/s",
+          "shap_push": -11.46,
+          "group": "Meteorology"
+        }
+      ],
+      "episode_classification": "Early Harvest Baseline",
+      "is_severe": false
+    }
+  }
+}
