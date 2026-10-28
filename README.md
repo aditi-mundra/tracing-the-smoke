@@ -42,6 +42,16 @@ cd ..
 # Execute backend test suite (39 tests)
 .\.venv\Scripts\pytest tests/ -v
 ```
+The Phase 1 audit tests require large research datasets and audit files that are not
+included in this checkout. They are reported as skipped when those files are absent.
+The trained-model inference test is also skipped unless model artifacts are present
+under `artifacts/final_models`.
+To run them, set `AUCML_PROJECT_ROOT` to the directory containing the `data` and
+`audit` folders before running pytest:
+```powershell
+$env:AUCML_PROJECT_ROOT = "E:\AUCML_PROJECT"
+.\.venv\Scripts\pytest tests/ -v
+```
 
 ### Step 3: Starting the Application
 ```powershell
