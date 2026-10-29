@@ -21,6 +21,7 @@ import { fetchLiveTelemetry, triggerLiveRefresh } from "../services/api";
 export default function LiveMonitoring() {
   const [telemetry, setTelemetry] = useState<any>(null);
   const [loading, setLoading] = useState<boolean>(true);
+  const [fetchError, setFetchError] = useState<string | null>(null);
   const [refreshing, setRefreshing] = useState<boolean>(false);
   const [autoRefresh, setAutoRefresh] = useState<boolean>(true);
   const [searchTerm, setSearchTerm] = useState<string>("");
@@ -28,12 +29,14 @@ export default function LiveMonitoring() {
   const loadTelemetry = async (force: boolean = false) => {
     if (force) setRefreshing(true);
     else setLoading(true);
+    setFetchError(null);
 
     try {
       const data = force ? await triggerLiveRefresh() : await fetchLiveTelemetry();
       setTelemetry(data);
-    } catch (err) {
+    } catch (err: any) {
       console.error("Failed to load live telemetry:", err);
+      setFetchError(err?.message || "Network error — backend unreachable");
     } finally {
       setLoading(false);
       setRefreshing(false);
@@ -58,6 +61,47 @@ export default function LiveMonitoring() {
       <div style={{ padding: "3rem", color: "var(--text-secondary)", display: "flex", alignItems: "center", gap: "0.75rem" }}>
         <RefreshCw size={20} className="spin" />
         <span>Connecting to live atmospheric telemetry and CPCB station feed...</span>
+      </div>
+    );
+  }
+
+  // Show error card if fetch failed and no cached telemetry exists
+  if (!telemetry && fetchError) {
+    return (
+      <div style={{ padding: "2rem" }}>
+        <div style={{
+          background: "rgba(239,68,68,0.08)", border: "1px solid rgba(239,68,68,0.35)",
+          borderRadius: "10px", padding: "1.5rem 1.75rem"
+        }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "0.6rem", marginBottom: "0.75rem" }}>
+            <AlertTriangle size={20} color="#f87171" />
+            <span style={{ fontWeight: 700, color: "#f87171", fontSize: "1rem" }}>Backend Unreachable</span>
+          </div>
+          <p style={{ fontSize: "0.88rem", color: "var(--text-secondary)", marginBottom: "0.5rem" }}>
+            The live telemetry service could not connect to the FastAPI backend.
+          </p>
+          <p style={{ fontSize: "0.82rem", color: "var(--text-muted)", marginBottom: "1rem" }}>
+            <b>Error:</b> {fetchError}
+          </p>
+          <div style={{ fontSize: "0.82rem", color: "var(--text-secondary)", lineHeight: 1.7 }}>
+            <b>To fix this:</b>
+            <ul style={{ marginTop: "0.4rem", paddingLeft: "1.25rem" }}>
+              <li>If running <b>locally</b>: start the backend with <code style={{ background: "rgba(255,255,255,0.08)", padding: "1px 5px", borderRadius: "3px" }}>uvicorn backend.app.main:app --host 0.0.0.0 --port 8000</code></li>
+              <li>If using the <b>Vercel deployment</b>: set the <code style={{ background: "rgba(255,255,255,0.08)", padding: "1px 5px", borderRadius: "3px" }}>VITE_API_BASE</code> environment variable in Vercel dashboard to your Render backend URL, then redeploy.</li>
+            </ul>
+          </div>
+          <button
+            onClick={() => loadTelemetry()}
+            style={{
+              marginTop: "1rem", display: "flex", alignItems: "center", gap: "0.4rem",
+              background: "rgba(239,68,68,0.15)", border: "1px solid rgba(239,68,68,0.4)",
+              color: "#f87171", padding: "0.45rem 1rem", borderRadius: "7px",
+              fontWeight: 600, fontSize: "0.83rem", cursor: "pointer"
+            }}
+          >
+            <RefreshCw size={14} /> Retry Connection
+          </button>
+        </div>
       </div>
     );
   }
