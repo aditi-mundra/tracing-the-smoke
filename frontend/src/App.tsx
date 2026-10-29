@@ -23,7 +23,7 @@ import {
   Flame
 } from "lucide-react";
 
-import { fetchLiveTelemetry } from "./services/api";
+import { fetchLiveTelemetry, API_DOCS_URL } from "./services/api";
 
 import LiveMonitoring from "./pages/LiveMonitoring";
 import EnvironmentalOverview from "./pages/EnvironmentalOverview";
@@ -341,7 +341,7 @@ export default function App() {
 
             {/* Backend Swagger API Link */}
             <a
-              href="http://127.0.0.1:8000/docs"
+              href={API_DOCS_URL}
               target="_blank"
               rel="noreferrer"
               className="btn btn-outline btn-sm"

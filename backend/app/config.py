@@ -40,9 +40,10 @@ class Settings(BaseModel):
     END_YEAR: int = 2025
     
     # API configuration
-    HOST: str = os.getenv("HOST", "127.0.0.1")
+    HOST: str = os.getenv("HOST", "0.0.0.0")
     PORT: int = int(os.getenv("PORT", "8000"))
     CORS_ORIGINS: list[str] = [
+        "https://tracing-the-smoke.vercel.app",
         "http://localhost:5173",
         "http://127.0.0.1:5173",
         "http://localhost:3000",

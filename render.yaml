@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: tracing-the-smoke-backend
+    env: python
+    plan: free
+    region: oregon
+    rootDir: .
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn backend.app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.8
+      - key: HOST
+        value: 0.0.0.0
+      - key: CORS_ORIGINS
+        value: https://tracing-the-smoke.vercel.app,http://localhost:5173,http://localhost:3000

@@ -3,7 +3,17 @@
  * Resilient to port variations (automatically checks 8000 and falls back to 8001).
  */
 
-let API_BASE = (import.meta.env.VITE_API_BASE as string) || "http://127.0.0.1:8000/api";
+function resolveApiBase(): string {
+  const envBase = (import.meta.env.VITE_API_BASE as string)?.trim();
+  if (!envBase) {
+    return "http://127.0.0.1:8000/api";
+  }
+  const clean = envBase.replace(/\/+$/, "");
+  return clean.endsWith("/api") ? clean : `${clean}/api`;
+}
+
+export let API_BASE = resolveApiBase();
+export const API_DOCS_URL = API_BASE.replace(/\/api\/?$/, "/docs");
 
 async function apiFetch(endpoint: string, options?: RequestInit): Promise<Response> {
   try {
